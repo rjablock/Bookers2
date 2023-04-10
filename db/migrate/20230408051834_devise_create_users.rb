@@ -34,6 +34,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
 
       t.timestamps null: false
+      
+      t.string :name
+      t.text :introduction
+      
     end
 
     add_index :users, :email,                unique: true
@@ -41,7 +45,5 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
     
-    t.string :name
-    t.text :introduction
   end
 end
