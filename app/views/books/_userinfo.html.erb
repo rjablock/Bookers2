@@ -17,11 +17,11 @@
 	     </table>
 	     <% if user == current_user %>
 	        <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block" do %>
-	          <i class="fa-solid fa-user-gear" style="color: #787878;"></i>
+	          <i class="fa-solid fa-user-gear"></i>
 	        <% end %>
 	     <% else %>
 	        <%= link_to user_path(current_user.id), class:"btn btn-outline-secondary btn-block" do %>
-	          <i class="fa-solid fa-user-gear" style="color: #787878;"></i>
+	          <i class="fa-solid fa-user-gear"></i>
 	        <% end %>
 	     <% end %>
 
