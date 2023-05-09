@@ -4,7 +4,7 @@
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://kit.fontawesome.com/0fa15b6b25.js" crossorigin="anonymous"></script>
-    
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -66,6 +66,11 @@
       </nav>
       <%= flash[:notice] %>
     </header>
+
+    <div class="d-flex justify-content-center mt-2 mb-3">
+      <%= render 'searches/form' %>
+    </div>
+
     <%= yield %>
     <footer class= "text-center mt-5 mb-3">CopyRight Infratop.inc</footer>
   </body>
