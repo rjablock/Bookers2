@@ -6,7 +6,7 @@
     <% end %>
   </ul>
   <% end %>
-  
+
   <h2>User info</h2>
 
       <%= image_tag user.get_profile_image(100,100) %>
@@ -21,17 +21,25 @@
             <th>introduction</th>
             <th><%= user.introduction %></th>
 	        </tr>
+	        <tr>
+	          <th>follows</th>
+	          <th><%= link_to user.followings.count, user_followings_path(user) %></th>
+	        </tr>
+	        <tr>
+	          <th>followers</th>
+	          <th><%= link_to user.followers.count, user_followers_path(user) %></th>
+	        </tr>
 	      </tbody>
 	     </table>
-	     <% if user == current_user %>
-	        <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block" do %>
-	          <i class="fas fa-user-cog"></i>
-	        <% end %>
-	     <% else %>
-	        <%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary btn-block" do %>
-	          <i class="fas fa-user-cog"></i>
-	        <% end %>
-	     <% end %>
+	     <div class="row">
+	       <% if current_user != user %>
+	         <td><%= render 'relationships/btn', user: user %></td>
+	       <% else %>
+	         <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+	           <i class="fas fa-user-cog"></i>
+	         <% end %>
+	       <% end %>
+	     </div>
 
       <h2 class="mt-3">New book</h2>
 
