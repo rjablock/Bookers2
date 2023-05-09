@@ -1,8 +1,4 @@
-<div class="container">
-<div class="row">
-<div class="col-md-3">
-  
-  <% if newbook.errors.any? %>
+ <% if newbook.errors.any? %>
   <h3><%= newbook.errors.count %>errors prohibited this obj from being saved:</h3>
   <ul>
     <% newbook.errors.full_messages.each do |message| %>
@@ -56,5 +52,3 @@
       </div>
 
       <% end %>
-
-</div>
