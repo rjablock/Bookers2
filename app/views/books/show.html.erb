@@ -10,7 +10,7 @@
       <h2>Book detail</h2>
         <table class="table">
         <tbody>
-          <tr>
+          <tr id="book_<%= @bookf.id %>">
             <td><%= link_to user_path(@bookf.user.id) do %>
                  <%= image_tag @bookf.user.get_profile_image(100,100) %>
                  <br>
@@ -21,7 +21,7 @@
                 <% end %></td>
             <td><%= @bookf.body %></td>
             <td>コメント数: <%= @bookf.book_comments.count %></td>
-            <td><%= render 'favorites/btn', book: @bookf %></td>
+            <td class="favorite-btn"><%= render 'favorites/btn', book: @bookf %></td>
 
             <% if @bookf.user == current_user %>
             <td><%= link_to edit_book_path(@bookf.id), class: "btn btn-success" do %>
