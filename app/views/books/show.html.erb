@@ -37,6 +37,10 @@
 
       <%= render 'book_comments/index', book: @bookf %>
 
+      <div id="comments_error">
+        <%= render 'layouts/errors', obj: @book_comment %>
+      </div>
+
       <%= form_with(model:[@bookf, @book_comment], local: false) do |f| %>
         <%= f.text_area :comment, row:'5', placeholder: "コメントここに", class: "w-100 mt-4" %>
         <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-2 pull-right btn-info" %>
